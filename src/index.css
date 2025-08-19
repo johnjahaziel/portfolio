@@ -68,7 +68,7 @@ body, html, #root {
 .eyes {
   /* padding-top: 100px; */
   position: absolute;
-  width: 850px;   /* adjust size */
+  width: 950px;   /* adjust size */
   z-index: 1;     /* behind text */
   transition: transform 0.1s linear;
   pointer-events: none; /* don’t block mouse */
