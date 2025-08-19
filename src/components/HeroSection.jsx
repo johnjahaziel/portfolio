@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import eyesImage from "../Neon_Eyes.png";
-import "../index.css"; // optional for styling
+import eyesImage from "../assets/Neon_Eyes.png";
+import "../css/herosection.css";
 
 const HeroSection = () => {
     const [scrollY, setScrollY] = useState(0);
@@ -45,8 +45,8 @@ const HeroSection = () => {
             flexDirection: "column",
             }}
         >
-            {/* Top Text */}
-            <div
+        {/* Top Text */}
+        <div
             className="text top"
             style={{
                 transform: `translateY(${topY}px)`,
@@ -54,10 +54,10 @@ const HeroSection = () => {
             }}
             >
             FLUTTER
-            </div>
+        </div>
 
-            {/* Eyes */}
-            <img
+        {/* Eyes */}
+        <img
             src={eyesImage}
             alt="Neon Eyes"
             className="eyes"
@@ -65,11 +65,11 @@ const HeroSection = () => {
                 opacity: eyeOpacity,
                 transform: `translate(${eyeOffsetX}px, ${eyeOffsetY}px)`,
                 transition: "opacity 0.1s linear, transform 0.05s linear",
-            }}
-            />
+        }}
+        />
 
-            {/* Bottom Text */}
-            <div
+        {/* Bottom Text */}
+        <div
             className="text bottom"
             style={{
                 transform: `translateY(${bottomY}px)`,
@@ -77,7 +77,7 @@ const HeroSection = () => {
             }}
             >
             FLUTTER
-            </div>
+        </div>
         </div>
         </div>
     );
