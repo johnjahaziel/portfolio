@@ -19,6 +19,7 @@ html, body, #root {
     height: 100vh;
     padding: 2rem;
     overflow: hidden;
+    margin-top: 20vh; /* gap from Hero section */
 }
 
 h1 {
@@ -121,5 +122,5 @@ h4 {
 }
 
 .after-space {
-    height: 75vh;
+    height: 100vh;
 }

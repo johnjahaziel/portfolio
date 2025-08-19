@@ -32,8 +32,12 @@ const AboutPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const leftTrackY = (1 - scrollProgress) * 200;
-  const rightTrackY = (scrollProgress - 1) * 200;
+  // Tune per-side movement to control perceived speed
+  const LEFT_MOVE_PX = 120;   // slower left side
+  const RIGHT_MOVE_PX = 200;  // keep right side as-is
+
+  const leftTrackY = (1 - scrollProgress) * LEFT_MOVE_PX;
+  const rightTrackY = (scrollProgress - 1) * RIGHT_MOVE_PX;
 
   // Slow down scrolling while About section is in view
   useEffect(() => {
@@ -41,7 +45,7 @@ const AboutPage = () => {
 
     let rafId = null;
     let pendingDeltaY = 0;
-    const slowFactor = 0.35; // smaller = slower
+    const slowFactor = 0.5; // smaller = slower
 
     const flushScroll = () => {
       window.scrollBy(0, pendingDeltaY);
