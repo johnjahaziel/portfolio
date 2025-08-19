@@ -4,6 +4,7 @@ import halfFaceRight from "../assets/Half_Face_right.png";
 import githubLogo from "../assets/icons/githublogo.png";
 import gmailLogo from "../assets/icons/gmaillogo.png";
 import linkedinLogo from "../assets/icons/linkedinlogo.png";
+import download from "../assets/Download.png"
 import "../css/aboutpage.css";
 
 const AboutPage = () => {
@@ -94,6 +95,15 @@ const AboutPage = () => {
     };
   }, [isInView]);
 
+  // Cursor-following fill effect for the Download button
+  const handleButtonMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
+    e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
+  };
+
   return (
     <>
       <div ref={aboutRef} className="about-container">
@@ -124,11 +134,11 @@ const AboutPage = () => {
           <h4>Flutter App Developer</h4>
 
           <div className="social-buttons">
-            <a href="mailto:yourmail@gmail.com" className="icon-btn gmail">
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJqbzljwsWPlsQMrnjcTJZlFTTNDGvjSTdcXvCmVLsLBhZCQwwVjpGMLmCVZWlHFlSlNrLB" className="icon-btn gmail">
               <img src={gmailLogo} alt="Gmail" className="icon" />
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/johnjahaziel"
               target="_blank"
               rel="noreferrer"
               className="icon-btn github"
@@ -136,13 +146,20 @@ const AboutPage = () => {
               <img src={githubLogo} alt="GitHub" className="icon" />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/john-jahaziel-b1882b28b"
               target="_blank"
               rel="noreferrer"
               className="icon-btn linkedin"
             >
               <img src={linkedinLogo} alt="LinkedIn" className="icon" />
             </a>
+          </div>
+          <div className="download" onMouseMove={handleButtonMouseMove}>
+            {Array.from({ length: 10 }).map((_, i) => (
+              <span key={i} className="bubble" aria-hidden="true"></span>
+            ))}
+            Download Resume
+            <img src={download} alt="Download"/>
           </div>
         </div>
       </div>

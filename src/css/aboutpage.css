@@ -124,3 +124,130 @@ h4 {
 .after-space {
     height: 0vh;
 }
+
+.download {
+    margin-top: 50px;
+    gap: 25px;
+    height: 65px;
+    width: 270px;
+    display: flex;
+    font-size: 18px; /* added px */
+    font-family: 'Poppins', serif;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate; /* contain pseudo elements */
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.download:hover {
+    color: black;
+    border-color: transparent;
+}
+
+/* Liquid circular fill that grows from the cursor point */
+.download::before {
+    content: "";
+    position: absolute;
+    top: var(--mouse-y, 50%);
+    left: var(--mouse-x, 50%);
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.45s ease-out, opacity 0.45s ease-out;
+    opacity: 0; /* hidden by default */
+    z-index: -1;
+}
+
+.download:hover::before {
+    transform: translate(-50%, -50%) scale(60);
+    opacity: 0.9;
+}
+
+/* Subtle bubbly ripples */
+.download::after {
+    content: "";
+    position: absolute;
+    top: var(--mouse-y, 50%);
+    left: var(--mouse-x, 50%);
+    transform: translate(-50%, -50%) scale(0);
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.2) 70%, rgba(255,255,255,0) 72%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(0.3px);
+    opacity: 0; /* hidden by default */
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    z-index: -1;
+}
+
+.download:hover::after {
+    transform: translate(-50%, -50%) scale(70);
+    opacity: 0.7;
+}
+
+/* Keep the icon above the fill */
+.download img {
+    position: relative;
+    z-index: 1;
+    filter: none;
+    transition: filter 0.25s ease;
+}
+  
+.download:hover img{
+    filter: brightness(0);
+    z-index: 1;
+}
+  
+/* Bubbles: multiple small elements that rise and disperse from cursor */
+.bubble {
+    position: absolute;
+    top: var(--mouse-y, 50%);
+    left: var(--mouse-x, 50%);
+    width: 6px;
+    height: 6px;
+    background: rgba(101, 101, 101, 0.9);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    filter: blur(0.2px);
+}
+
+@keyframes bubbleRise {
+    0% {
+        opacity: 0.0;
+        transform: translate(-50%, -50%) translate(0, 0) scale(0.6);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translate(var(--bx, 0px), calc(-40px - var(--by, 0px))) scale(1.3);
+    }
+}
+
+.download:hover .bubble {
+    animation: bubbleRise 900ms ease-out forwards;
+}
+
+/* Vary bubble sizes, offsets, and delays */
+.download:hover .bubble:nth-child(1) { --bx: -26px; --by: 4px;  width: 5px; height: 5px; animation-delay: 0ms; }
+.download:hover .bubble:nth-child(2) { --bx:  8px;  --by: 10px; width: 6px; height: 6px; animation-delay: 50ms; }
+.download:hover .bubble:nth-child(3) { --bx:  22px; --by: 2px;  width: 7px; height: 7px; animation-delay: 90ms; }
+.download:hover .bubble:nth-child(4) { --bx: -14px; --by: 14px; width: 6px; height: 6px; animation-delay: 120ms; }
+.download:hover .bubble:nth-child(5) { --bx:  30px; --by: 8px;  width: 5px; height: 5px; animation-delay: 160ms; }
+.download:hover .bubble:nth-child(6) { --bx: -32px; --by: 6px;  width: 8px; height: 8px; animation-delay: 200ms; }
+.download:hover .bubble:nth-child(7) { --bx:  16px; --by: 18px; width: 6px; height: 6px; animation-delay: 230ms; }
+.download:hover .bubble:nth-child(8) { --bx: -6px;  --by: 22px; width: 7px; height: 7px; animation-delay: 260ms; }
+.download:hover .bubble:nth-child(9) { --bx:  26px; --by: 20px; width: 6px; height: 6px; animation-delay: 300ms; }
+.download:hover .bubble:nth-child(10){ --bx: -20px; --by: 26px; width: 5px; height: 5px; animation-delay: 340ms; }
