@@ -6,12 +6,12 @@
     position: relative;
     width: 100%;
     min-height: 700px;
-    margin-top: 60px;
+    margin-top: 0px;
     padding-bottom: 80px;
 }
 
 .timeline-section .section-title{
-    margin-top: 20%;
+    margin-top: 10%;
     font-family: 'Poppins' , serif;
     align-items: center;
     margin-bottom: 10%;
@@ -178,7 +178,7 @@
 }
 
 .timeline-card:hover {
-    transform: translateY(-16px) scale(1.04) rotateY(4deg);
+    transform: scale(1.04);
     box-shadow: 0 8px 40px 0 #34343455, 0 2px 24px 0 #0008;
     border-color: #494949;
     background: rgba(35, 35, 35, 0.7);

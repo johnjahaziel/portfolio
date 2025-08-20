@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Halant:wght@400;500;700&display=swap');
 
 .technical-journey {
-    min-height: 100vh;
+    min-height: 80vh;
     margin-top: 10vh;
     padding: 4rem 2rem;
     background: black;
@@ -46,7 +46,7 @@
 }
 
 .journey-subtitle {
-    margin-top: 5%;
+    margin-top: 3%;
     color: #CACACA;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
@@ -91,6 +91,90 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Journey Bar */
+.journey-bar {
+    width: 0;
+    height: 6px;
+    background: white;
+    margin: 32px auto 32px auto;
+    border-radius: 2px;
+    transition: width 1.2s cubic-bezier(0.77,0,0.18,1);
+    animation: barGrow 1.2s cubic-bezier(0.77,0,0.18,1) forwards;
+}
+
+@keyframes barGrow {
+    from { width: 0; }
+    to { width: 20%; }
+}
+
+.technical-expertise {
+    text-align: center;
+    margin-top: 15rem;
+}
+
+.technical-expertise .expertise-title {
+    font-family: 'Poppins', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: textReveal 1s cubic-bezier(0.77,0,0.18,1) forwards;
+    animation-delay: 0.4s;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 0.2fr);
+    margin-top: 2.5rem;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-card {
+    background: #181818;
+    border: 2px solid #444;
+    margin-top: 20%;
+    border-radius: 16px;
+    padding: 2.5rem 2rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 220px;
+    min-height: 200px;
+    box-shadow: 0 2px 16px 0 #0006;
+    transition: transform 0.3s cubic-bezier(0.77,0,0.18,1), box-shadow 0.3s cubic-bezier(0.77,0,0.18,1);
+}
+.skill-card:hover {
+    transform:scale(1.04);
+    box-shadow: 0 8px 32px 0 #72727233, 0 2px 24px 0 #0008;
+}
+
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.2rem;
+    border-radius: 16px;
+    padding: 0.5rem;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 /* Responsive Design */
