@@ -46,7 +46,7 @@ const AboutPage = () => {
 
     let rafId = null;
     let pendingDeltaY = 0;
-    const slowFactor = 0.5; // smaller = slower
+    const slowFactor = 0.3; // smaller = slower
 
     const flushScroll = () => {
       window.scrollBy(0, pendingDeltaY);
