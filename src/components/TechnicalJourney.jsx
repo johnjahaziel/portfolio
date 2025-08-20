@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import django from "../assets/django.png";
 import figma from "../assets/Figma.png";
 import flutter from "../assets/flutter.png";
@@ -14,13 +14,34 @@ const skills = [
 
 const TechnicalJourney = () => {
     const sectionRef = useRef(null);
+    const [hasAnimated, setHasAnimated] = useState(false);
+
+    useEffect(() => {
+        const observer = new window.IntersectionObserver(
+            ([entry]) => {
+                // Only trigger animation the first time it enters the viewport
+                if (entry.isIntersecting && !hasAnimated) {
+                    setHasAnimated(true);
+                }
+            },
+            { threshold: 0.3 }
+        );
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, [hasAnimated]);
 
     return (
         <div ref={sectionRef} className="technical-journey">
-            <div className="journey-header">
+            <div className={`journey-header${hasAnimated ? " animate" : ""}`}>
                 <h1 className="tj-title">MY</h1>
                 <h3 className="tj-subtitle">DEVELOPER JOURNEY</h3>
-                <div className="journey-bar"></div> {/* Animated bar */}
+                <div className="journey-bar"></div>
                 <p className="journey-subtitle">1+ Years of Innovation • Flutter App Developer • Kovilpatti, India</p>
             </div>
             <div className="technical-expertise">
