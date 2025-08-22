@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import django from "../assets/django.png";
-import figma from "../assets/Figma.png";
+import figma from "../assets/figma.png";
 import flutter from "../assets/flutter.png";
 import react from "../assets/react.png";
 import "../css/technicaljourney.css";

@@ -3,7 +3,7 @@ import "../css/techstack.css";
 
 import dart from "../assets/dart.png";
 import django from "../assets/django.png";
-import figma from "../assets/Figma.png";
+import figma from "../assets/figma.png";
 import firebase from "../assets/firebase.png";
 import flutter from "../assets/flutter.png";
 import git from "../assets/git.png";
