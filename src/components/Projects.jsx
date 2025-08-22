@@ -44,7 +44,7 @@ const Projects = () => {
     const bottomRow = imageList.slice(4, 8);
 
     const renderRow = (images, direction, speed) => {
-        const offset = (scrollY * speed) % (images.length * 470);
+        const offset = (scrollY * speed) % (images.length * 420);
         return (
         <div
             className="projects-row"
