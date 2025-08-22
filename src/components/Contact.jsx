@@ -1,4 +1,7 @@
 import { useState } from "react";
+import location from "../assets/loca.png";
+import mail from "../assets/mail.png";
+import phone from "../assets/phone.png";
 import "../css/contact.css";
 
 const Contact = () => {
@@ -24,53 +27,63 @@ const Contact = () => {
 
     return (
         <div className="contact-section">
-            <div className="contact-header">
-                <h1 className="contact-title">LET'S</h1>
-                <h2 className="contact-subtitle">CONNECT</h2>
-                <p className="contact-description">
-                    "Ready to collaborate on something extraordinary? Let's turn ideas into reality."
-                </p>
-                <p className="contact-sub-description">
-                    Whether you have a project in mind, want to discuss opportunities, or simply want to connect, 
-                    I'm always excited to hear from creative minds.
-                </p>
-            </div>
-
             <div className="contact-content">
-                <div className="contact-info">
-                    <div className="contact-item">
-                        <div className="contact-icon">✉</div>
-                        <div className="contact-details">
-                            <h3>Email</h3>
-                            <p>johnjahaziel@gmail.com</p>
-                        </div>
+                {/* --- LEFT SIDE --- */}
+                <div className="contact-left">
+                    <div className="contact-header">
+                        <h1 className="contact-title">Let's</h1>
+                        <h2 className="contact-subtitle">CONNECT</h2>
+                        <p className="contact-description">
+                            "Ready to collaborate on something extraordinary? Let's turn ideas into reality."
+                        </p>
+                        <p className="contact-sub-description">
+                            Whether you have a project in mind, want to discuss opportunities, or simply want to connect, 
+                            I'm always excited to hear from creative minds.
+                        </p>
                     </div>
-                    
-                    <div className="contact-item">
-                        <div className="contact-icon">📱</div>
-                        <div className="contact-details">
-                            <h3>Phone</h3>
-                            <p>+91 98765 43210</p>
+
+                    <div className="contact-info">
+                        <div className="contact-item">
+                            <div className="contact-icon">
+                                <img src={mail} alt="" />
+                            </div>
+                            <div className="contact-details">
+                                <h3>Email</h3>
+                                <p>johnjahaziel@gmail.com</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div className="contact-item">
-                        <div className="contact-icon">📍</div>
-                        <div className="contact-details">
-                            <h3>Location</h3>
-                            <p>Kerala, India</p>
+                        
+                        <div className="contact-item">
+                            <div className="contact-icon">
+                                <img src={phone} alt="" />
+                            </div>
+                            <div className="contact-details">
+                                <h3>Phone</h3>
+                                <p>9791277570</p>
+                            </div>
+                        </div>
+                        
+                        <div className="contact-item">
+                            <div className="contact-icon">
+                                <img src={location} alt="" />
+                            </div>
+                            <div className="contact-details">
+                                <h3>Location</h3>
+                                <p>Kovilpatti, India</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                {/* --- RIGHT SIDE (FORM) --- */}
                 <div className="contact-form-container">
-                    <h3 className="form-title">Send me a message</h3>
+                    <h3 className="form-title">contact</h3>
                     <form className="contact-form" onSubmit={handleSubmit}>
                         <div className="form-group">
+                            <label>Your Name</label>
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Your Name"
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
@@ -79,10 +92,10 @@ const Contact = () => {
                         </div>
                         
                         <div className="form-group">
+                            <label>Your Email</label>
                             <input
                                 type="email"
                                 name="email"
-                                placeholder="Email Address"
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
@@ -91,9 +104,9 @@ const Contact = () => {
                         </div>
                         
                         <div className="form-group">
+                            <label>Your Message</label>
                             <textarea
                                 name="message"
-                                placeholder="Your Message"
                                 value={formData.message}
                                 onChange={handleChange}
                                 required

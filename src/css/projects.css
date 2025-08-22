@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
 .projects-section {
-    min-height: 300vh;
+    min-height: 180vh;
     background: black;
     position: relative;
     overflow: hidden;

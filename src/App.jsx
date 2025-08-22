@@ -1,15 +1,15 @@
 import AboutPage from "./components/AboutPage";
+import Contact from "./components/Contact";
 import EducationPath from "./components/EducationPath";
 import Experience from "./components/Experience";
 import HeroSection from "./components/Herosection";
 import Projects from "./components/Projects";
 import TechnicalJourney from "./components/TechnicalJourney";
 import Techstack from "./components/Techstack";
-// import Contact from "./components/Contact";
 
 const App = () => {
   return (
-    <div style={{ background: "black" }}>
+    <div style={{ background: "black", position: "relative", zIndex: 0 }}>
       <HeroSection />
       <AboutPage />
       <TechnicalJourney />
@@ -17,7 +17,7 @@ const App = () => {
       <Experience />
       <Techstack />
       <Projects />
-      {/* <Contact /> */}
+      <Contact />
       {/* You can keep adding more sections */}
     </div>
   );

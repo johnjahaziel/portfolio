@@ -9,7 +9,7 @@
 
 html, body, #root {
     height: 100%;
-    background: black;
+    /* background: black; */
     color: white;
 }
 
