@@ -23,7 +23,7 @@ const techStacks = [
         type: "Backend",
         type1: "Backend Development",
         desc: "Building robust, scalable backend systems and APIs using Django and Python.",
-        proficiency: 85,
+        proficiency: 45,
         icon: django,
     },
     {
@@ -31,7 +31,7 @@ const techStacks = [
         type: "Frontend",
         type1: "Web Development",
         desc: "Developing interactive and dynamic user interfaces with React.js.",
-        proficiency: 92,
+        proficiency: 50,
         icon: react,
     },
     {
@@ -39,7 +39,7 @@ const techStacks = [
         type: "Design",
         type1: "UI/UX",
         desc: "Designing modern, user-friendly interfaces and prototypes in Figma.",
-        proficiency: 80,
+        proficiency: 90,
         icon: figma,
     },
     {
