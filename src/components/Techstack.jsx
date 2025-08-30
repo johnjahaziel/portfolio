@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import "../css/techstack.css";
 
 import dart from "../assets/dart.png";
-import django from "../assets/django.png";
 import figma from "../assets/figma.png";
 import firebase from "../assets/firebase.png";
 import flutter from "../assets/flutter.png";
@@ -18,14 +17,14 @@ const techStacks = [
         proficiency: 90,
         icon: flutter,
     },
-    {
-        name: "Django",
-        type: "Backend",
-        type1: "Backend Development",
-        desc: "Building robust, scalable backend systems and APIs using Django and Python.",
-        proficiency: 45,
-        icon: django,
-    },
+    // {
+    //     name: "Django",
+    //     type: "Backend",
+    //     type1: "Backend Development",
+    //     desc: "Building robust, scalable backend systems and APIs using Django and Python.",
+    //     proficiency: 45,
+    //     icon: django,
+    // },
     {
         name: "React.js",
         type: "Frontend",
