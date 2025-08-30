@@ -146,7 +146,7 @@ const AboutPage = () => {
               <img src={githubLogo} alt="GitHub" className="icon" />
             </a>
             <a
-              href="https://www.linkedin.com/in/john-jahaziel-b1882b28b"
+              href="https://www.linkedin.com/in/johnjahaziel"
               target="_blank"
               rel="noreferrer"
               className="icon-btn linkedin"
