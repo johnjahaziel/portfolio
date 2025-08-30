@@ -126,6 +126,8 @@ h4 {
 }
 
 .download {
+    text-decoration: none;   /* removes underline */
+    color: #fff;
     margin-top: 50px;
     gap: 25px;
     height: 65px;

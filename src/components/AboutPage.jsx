@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import download from "../assets/Download.png";
 import halfFaceLeft from "../assets/Half_Face_left.png";
 import halfFaceRight from "../assets/Half_Face_right.png";
 import githubLogo from "../assets/icons/githublogo.png";
 import gmailLogo from "../assets/icons/gmaillogo.png";
 import linkedinLogo from "../assets/icons/linkedinlogo.png";
-import download from "../assets/Download.png"
 import "../css/aboutpage.css";
 
 const AboutPage = () => {
@@ -154,12 +154,14 @@ const AboutPage = () => {
               <img src={linkedinLogo} alt="LinkedIn" className="icon" />
             </a>
           </div>
-          <div className="download" onMouseMove={handleButtonMouseMove}>
-            {Array.from({ length: 10 }).map((_, i) => (
-              <span key={i} className="bubble" aria-hidden="true"></span>
-            ))}
-            Download Resume
-            <img src={download} alt="Download"/>
+          <div>
+            <a href="/John_Jahaziel_Resume.pdf" download className="download" onMouseMove={handleButtonMouseMove}>
+              {Array.from({ length: 10 }).map((_, i) => (
+                <span key={i} className="bubble" aria-hidden="true"></span>
+              ))}
+              Download Resume
+              <img src={download} alt="Download" />
+            </a>
           </div>
         </div>
       </div>
