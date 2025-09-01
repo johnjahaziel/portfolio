@@ -167,7 +167,7 @@ const AboutPage = () => {
       </div>
       {/* Extra space to allow scroll past the section so animations continue off-screen */}
       <div className="after-space" />
-    </>
+    </> 
   );
 };
 
