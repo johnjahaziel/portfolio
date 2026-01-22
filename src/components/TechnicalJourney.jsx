@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import django from "../assets/django.png";
 import figma from "../assets/figma.png";
 import flutter from "../assets/flutter.png";
-import react from "../assets/react.png";
+// import react from "../assets/react.png";
 import "../css/technicaljourney.css";
 
 const skills = [
     { name: "Flutter", icon: flutter },
-    { name: "Django", icon: django },
-    { name: "React Js", icon: react },
+    // { name: "State Management (Provider, Bloc)", icon: flutter },
+    // { name: "React Js", icon: react },
     { name: "Figma", icon: figma },
 ];
 
