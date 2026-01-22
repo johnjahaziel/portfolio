@@ -10,7 +10,7 @@ const Contact = () => {
         name: "",
         email: "",
         message: ""
-    }); 
+    });  
 
     const handleChange = (e) => {
         setFormData({
